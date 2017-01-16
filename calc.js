@@ -11,12 +11,12 @@
 
 })();
 
-// NOTES
-//
-// x = first number pressed,
-// y = second number pressed
-//
-// x+y = x
-// if suma is activated
-//
-// x + second number pressed = y
+NOTES
+
+x = first number pressed,
+y = second number pressed
+
+x+y = x
+if suma is activated
+
+x + second number pressed = y
