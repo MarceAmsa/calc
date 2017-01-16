@@ -15,18 +15,23 @@
         console.log("number button PRESSED ");
         console.log("the target ID is..." + this.id);
 
+
         updateValue( this.getAttribute("data-value") );
       });
   }
 
   var value = '';
-  function updateValue(val){
+  function updateValue(val_1){
       // Store value
-      value += val;
-
+      value += val_1;
+      value = parseFloat (value);
       // Display update
-      displayShow.innerHTML += val;
+      displayShow.innerHTML += value;
   }
+
+
+
+
 
 
 
