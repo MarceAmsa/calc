@@ -4,6 +4,7 @@
 
   var myNumber = document.getElementsByClassName("numbers");
   var displayShow = document.getElementById('display');
+  var addOp = document.getElementById('add');
 
   var myFunction = function () {
     var attribute = this.getAttribute("data-value");
@@ -12,8 +13,7 @@
 
   for (var i = 0; i < myNumber.length; i++) {
       myNumber[i].addEventListener('click', function (event){
-        console.log("number button PRESSED ");
-        console.log("the target ID is..." + this.id);
+        console.log("you pressed " + this.id);
 
 
         updateValue( this.getAttribute("data-value") );
@@ -24,10 +24,26 @@
   function updateValue(val_1){
       // Store value
       value += val_1;
-      value = parseFloat (value);
+
       // Display update
       displayShow.innerHTML += value;
+
+      addOp.addEventListener('click', function(event){
+        console.log("plus");
+        var newValue = '';
+
+        function updateValue(val_2) {
+          newValue += val_2;
+
+          displayShow.innerHTML += parseFloat (newValue) + parseFloat(value);
+        }
+
+      })
+
+      // value = parseFloat (value) + parseFloat (value_2);
   }
+
+
 
 
 
