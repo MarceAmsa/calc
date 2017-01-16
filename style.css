@@ -15,7 +15,9 @@ td {
 .display {
   height: 25%;
 }
+
 .reset {
+  color: grey;
   text-align: left;
 }
 
@@ -25,8 +27,4 @@ td {
 
 .functions {
   color: blue;
-}
-
-.reset {
-  color: grey;
 }

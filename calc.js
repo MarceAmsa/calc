@@ -1,22 +1,37 @@
 (function myMainFunction(){
   console.log("it's alive!");
 
-  var numbers = document.getElementsByClassName("numbers");
 
-  numbers.id.addEventListener('click', function (ev){
-    console.log("number button PRESSED ");
-    console.log("the target ID is..." + ev.target.id);
+  var myNumber = document.getElementsByClassName("numbers");
+  var displayShow = document.getElementById('display');
 
-  })
+  var myFunction = function () {
+    var attribute = this.getAttribute("data-value");
+    alert(attribute);
+  };
+
+  for (var i = 0; i < myNumber.length; i++) {
+      myNumber[i].addEventListener('click', function (event){
+        console.log("number button PRESSED ");
+        console.log("the target ID is..." + this.id);
+
+        updateValue( this.getAttribute("data-value") );
+      });
+  }
+
+  var value = '';
+  function updateValue(val){
+      // Store value
+      value += val;
+
+      // Display update
+      displayShow.innerHTML += val;
+  }
+
+
 
 })();
 
-NOTES
 
-x = first number pressed,
-y = second number pressed
 
-x+y = x
-if suma is activated
-
-x + second number pressed = y
+// Operators for functions

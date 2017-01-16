@@ -4,63 +4,57 @@
   <head>
     <title>Marce's Calculator</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
   </head>
 
 
     <body>
 
+      <div class="inputs">
         <table>
 
-          <tr class="display" id="display">
-            <td colspan="4" >&nbsp;</td>
+          <tr>
+            <td colspan="4" class="display" id="display">&nbsp;</td>
           </tr>
 
           <tr>
             <!-- this is a reset button -->
-            <td colspan="3" class="reset" button id="ac">AC</td>
+            <td colspan="3" class="reset" id="ac">AC</td>
             <td class="functions" id="divide">/</td>
           </tr>
 
           <tr>
-            <div class="numbers">
-              <td id="7">7</td>
-              <td id="8"> 8 </td>
-              <td id="9"> 9 </td>
-            </div>
+              <td class="numbers" data-value=7 id="7">7</td>
+              <td class="numbers" data-value=8 id="8"> 8 </td>
+              <td class="numbers" data-value=9 id="9"> 9 </td>
+
             <td class="functions" id="mult"> x </td>
           </tr>
 
           <tr>
-            <div class="numbers">
-              <td id="4"> 4 </td>
-              <td id="5"> 5 </td>
-              <td id="6"> 6 </td>
-            </div>
+              <td class="numbers" data-value=4 id="4"> 4 </td>
+              <td class="numbers" data-value=5 id="5"> 5 </td>
+              <td class="numbers" data-value=6 id="6"> 6 </td>
+
             <td class="functions" id="subs"> - </td>
           </tr>
 
           <tr>
-            <div class="numbers">
-              <td id="1"> 1 </td>
-              <td id="2"> 2 </td>
-              <td id="3"> 3 </td>
-            </div>
+              <td class="numbers" data-value=1 id="1"> 1 </td>
+              <td class="numbers" data-value=2 id="2"> 2 </td>
+              <td class="numbers" data-value=3 id="3"> 3 </td>
+
             <td class="functions" id="add"> + </td>
           </tr>
 
           <tr>
-            <td colspan="2" class="numbers" id="0"> 0 </td>
+            <td colspan="2" class="numbers" data-value=0 id="0"> 0 </td>
             <td class="decimal" id="decimal"> . </td>
             <td class="functions" id="equals"> = </td>
           </tr>
-
-
         </table>
-
-
-
-      <script type="text/javascript" src="calc.js"></script>
+      </div>
+      <script type="text/javascript" src="./calc.js"></script>
 
     </body>
     </html>
