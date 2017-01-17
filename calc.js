@@ -35,10 +35,18 @@ var clear = false;
   addOp.addEventListener ('click', function (ev) {
     clear = true;
     console.log(clear);
+    displayShow.innerHTML = value;
 
-    if (clear == true) {
-        clear = false;
-        console.log(clear);
+    for (var i = 0; i < myNumber.length; i++) {
+
+        myNumber[i].addEventListener('click', function (event){
+          if (clear == true) {
+          clear = false;
+          console.log(clear);
+          displayShow.innerHTML = " ";
+          console.log("reset done");
+        }
+      });
     }
 });
 
