@@ -5,6 +5,7 @@
   var myNumber = document.getElementsByClassName("numbers");
   var displayShow = document.getElementById('display');
   var addOp = document.getElementById('add');
+  var acButton = document.getElementById('ac');
 
   var myFunction = function () {
     var attribute = this.getAttribute("data-value");
@@ -37,23 +38,21 @@ var clear = false;
   });
 
 var reset = false;
-  for (var i = 0; i < myNumber.length; i++) {
-    myNumber[i].addEventListener('click', function (event){
-      if (clear == true) {
-        clear == false;
-
-        reset == true;
-        value = '';
-        function updateValue(val_1){
-            // Store value
-            value += val_1;
-            // Display update
-            displayShow.innerHTML += val_1;
-            // value = parseFloat (value) + parseFloat (value_2);
-        }
-      }
-  });
+    if (clear == true) {
+      for (var i = 0; i < myNumber.length; i++) {
+      myNumber[i].addEventListener('click', function (event){
+      clear == false;
+      reset == true;
+      value = '';
+    });
+  }
 }
+
+
+  acButton.addEventListener('click', function (ev){
+    console.log("resetPressed");
+    displayShow.innerHTML = ' ';
+  })
 
 
 })();
