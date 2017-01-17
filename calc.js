@@ -35,22 +35,21 @@ var clear = false;
   addOp.addEventListener ('click', function (ev) {
     clear = true;
     console.log(clear);
-  });
 
-var reset = false;
     if (clear == true) {
-      for (var i = 0; i < myNumber.length; i++) {
-      myNumber[i].addEventListener('click', function (event){
-      clear == false;
-      reset == true;
-      value = '';
-    });
-  }
-}
+        clear = false;
+        console.log(clear);
+    }
+});
 
 
+
+
+
+// AC RESET BUTTON ------------------
   acButton.addEventListener('click', function (ev){
     console.log("resetPressed");
+    value = '';
     displayShow.innerHTML = ' ';
   })
 
