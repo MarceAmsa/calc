@@ -37,16 +37,13 @@
     var clear = false;
     addOp.addEventListener('click', function (ev) {
 
-        inputArray.push('+');
+        inputArray.push('+'); //como no es tecla de número hay que especificar, cuando estripa + meta + en el string
 
 
-        displayShow.innerHTML = '';
+        displayShow.innerHTML = ''; // have clear del display
 
 
     });
-
-
-// RESULT BUTTON ------------------
 
     function inputParser(){
         var numberAndOperatorArray = []; // se nombra las variables no hace nada
@@ -54,11 +51,12 @@
         var currentNumber = ''; // nse nombra la variable, tampoco hace nada
 
         // Loop through input: ['1', '.', '1', '+', '1']
-        for( var i=0 ; i < inputArray.length ; i++ ){ // para cada elemento del array de 0 a lo que sea (inputArray.length) es lo máx
+        for( var i=0 ; i < inputArray.length ; i++ ){ // viene de la función update value, va uno por uno
 
             // Check if current input is a number
             if( ! isNaN( parseInt(inputArray[i]) ) ){  //isNaN es "no es número" pero con ! es lo contrario ósea "es número"
                 // Concatenate number
+                // input array son todos los botones que se presionaron anteriormente lo que genera una lista, que luego se concatena
                 currentNumber += inputArray[i]; //inputArray es una lista diferente a numberAndOperatorArray
                 //la línea alimenta todos los currentnumber a input array que está arriba como variable definida
 
@@ -66,12 +64,12 @@
                 // Current input is not a number ( = it is a . or operator
                 switch(inputArray[i]){
                     case '.':
-                        currentNumber += '.';
+                        currentNumber += '.'; // si en esa lista hay un punto, entonces el punto se mete dentro del número
                     break;
                     // Default handle all of the operator
                     default:
                         // Save number into value array
-                        numberAndOperatorArray.push(parseFloat(currentNumber));
+                        numberAndOperatorArray.push(parseFloat(currentNumber)); //ACÁ es que se empieza a crear el numberOperatorArray, antes de eso estaba solamente vacía
 
                         // Save operator into value array
                         numberAndOperatorArray.push(inputArray[i]);
