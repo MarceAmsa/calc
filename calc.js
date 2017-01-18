@@ -23,12 +23,16 @@
     }
 
     var value = '';
+    var x = '';
+    var y = '';
+    var result = '';
 
     function updateValue(val_1) {
         // Store value
         value += val_1;
         // Display update
         displayShow.innerHTML += val_1;
+
         // value = parseFloat (value) + parseFloat (value_2);
     }
 
@@ -38,12 +42,18 @@
     addOp.addEventListener('click', function (ev) {
         clear = true;
         console.log(clear);
+        x = value;
         displayShow.innerHTML = myNumber[i];
 
-        for (var i = 0; i < myNumber.length; i++) {
+
+        for (var i = 0; i < myNumber.length; i++) { //UNDEFINED ERROR HERE although it works and clears out value
             myNumber[i].addEventListener('click', function (event) {
                 if (clear == true) {
+
+
                     clear = false;
+
+                    y = value;
                     console.log(clear);
                     console.log("reset done");
                     //displayShow.innerHTML = myNumber[i];
@@ -57,10 +67,13 @@
 
 
 // RESULT BUTTON ------------------
+
     equalsButton.addEventListener('click', function (ev) {
         console.log("result must be shown");
         // value = parseFloat(value) + parseFloat(value_2);
-        displayShow.innerHTML = parseFloat(value);
+        result = parseFloat(x);
+        displayShow.innerHTML = result;
+
     })
 
 
@@ -69,6 +82,7 @@
         console.log("resetPressed");
         value = '';
         displayShow.innerHTML = ' ';
+
     })
 
 
