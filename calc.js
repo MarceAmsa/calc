@@ -9,14 +9,15 @@
     var equalsButton = document.getElementById('equals');
 
 
-    var myFunction = function () {
-        var attribute = this.getAttribute("data-value");
-        alert(attribute);
-    };
+    // var myFunction = function () {
+    //     var attribute = this.getAttribute("data-value");
+    //     alert(attribute);
+    // };
 
     for (var i = 0; i < myNumber.length; i++) {
         myNumber[i].addEventListener('click', function (event) {
             console.log("you pressed " + this.id);
+            acButton.innerHTML = 'C';
 
             updateValue(this.getAttribute("data-value")); // conectado con la variable update value de abajo
         });
@@ -129,14 +130,28 @@
     })
 
 
+    var resetPressed = false;
+
+
     // AC RESET BUTTON ------------------
         acButton.addEventListener('click', function (ev) {
-            console.log("resetPressed");
+
+
+            if (resetPressed == false) {
+            resetPressed = true;
+
+            } else {
+
             value = '';
+            ev.target.innerHTML = 'AC';
             displayShow.innerHTML = ' ';
+          //  resetPressed = false;
+
+            }
         })
 
 })();
+
 
 
 // Operators for functions
