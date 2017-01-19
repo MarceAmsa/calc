@@ -3,11 +3,11 @@
 
 
     var myNumber = document.getElementsByClassName("numbers");
+    var myOperator = document.getElementsByClassName("operator");
     var displayShow = document.getElementById('display');
-    var addOp = document.getElementById('add');
     var acButton = document.getElementById('ac');
     var equalsButton = document.getElementById('equals');
-    var subOp = document.getElementById('subs');
+
 
     var myFunction = function () {
         var attribute = this.getAttribute("data-value");
@@ -36,18 +36,17 @@
 //CLEAR DISPLAY
 
     var clear = false;
-    addOp.addEventListener('click', function (ev) {
 
-        inputArray.push('+'); //como no es tecla de número hay que especificar, cuando estripa + meta + en el string
-        displayShow.innerHTML = ''; // have clear del display
+// ----------------------
 
-    });
+    for( var i = 0 ; i < myOperator.length ; i++ ){
+        myOperator[i].addEventListener('click', function (ev) {
+                console.log("operator pressed ");
+                inputArray.push(this.getAttribute("data-operator"));
+                displayShow.innerHTML = '';
+            });
+    }
 
-    subOp.addEventListener('click', function (ev) {
-        inputArray.push('-');
-        displayShow.innerHTML = '';
-
-    })
 
     function inputParser(){
         var numberAndOperatorArray = []; // se nombra las variables no hace nada
@@ -102,15 +101,19 @@
                     case '+':
                         result += numberAndOperatorArray[j+1];
                         break;
+
                     case '-':
                         result -= numberAndOperatorArray[j+1]; //needs adEventListener
-                    break;
+                        break;
+
                     case '÷':
                         result /= numberAndOperatorArray[j+1]; //needs adEventListener
                         break;
+
                     case '×':
                         result *= numberAndOperatorArray[j+1]; //needs adEventListener
                         break;
+
                 }
             }
         }
@@ -118,27 +121,20 @@
         console.log(result)
         displayShow.innerHTML = result;
 
-
-
-
     }
 
     // RESULT ------------------
     equalsButton.addEventListener('click', function (ev) {
-
         inputParser(); // efectuar la función
-
     })
 
 
-// AC RESET BUTTON ------------------
-    acButton.addEventListener('click', function (ev) {
-        console.log("resetPressed");
-        value = '';
-        displayShow.innerHTML = ' ';
-
-    })
-
+    // AC RESET BUTTON ------------------
+        acButton.addEventListener('click', function (ev) {
+            console.log("resetPressed");
+            value = '';
+            displayShow.innerHTML = ' ';
+        })
 
 })();
 
