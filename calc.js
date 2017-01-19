@@ -7,6 +7,7 @@
     var addOp = document.getElementById('add');
     var acButton = document.getElementById('ac');
     var equalsButton = document.getElementById('equals');
+    var subOp = document.getElementById('subs');
 
     var myFunction = function () {
         var attribute = this.getAttribute("data-value");
@@ -38,12 +39,15 @@
     addOp.addEventListener('click', function (ev) {
 
         inputArray.push('+'); //como no es tecla de número hay que especificar, cuando estripa + meta + en el string
-
-
         displayShow.innerHTML = ''; // have clear del display
 
-
     });
+
+    subOp.addEventListener('click', function (ev) {
+        inputArray.push('-');
+        displayShow.innerHTML = '';
+
+    })
 
     function inputParser(){
         var numberAndOperatorArray = []; // se nombra las variables no hace nada
@@ -99,13 +103,20 @@
                         result += numberAndOperatorArray[j+1];
                         break;
                     case '-':
-                        result -= numberAndOperatorArray[j+1];
+                        result -= numberAndOperatorArray[j+1]; //needs adEventListener
                     break;
+                    case '÷':
+                        result /= numberAndOperatorArray[j+1]; //needs adEventListener
+                        break;
+                    case '×':
+                        result *= numberAndOperatorArray[j+1]; //needs adEventListener
+                        break;
                 }
             }
         }
 
         console.log(result)
+        displayShow.innerHTML = result;
 
 
 
@@ -116,15 +127,6 @@
     equalsButton.addEventListener('click', function (ev) {
 
         inputParser(); // efectuar la función
-
-        // if (clear == true){
-        //     y = value ; // y = value -x; as a string
-        //     clear = false;
-        // }
-        // console.log("result must be shown");
-        // // value = parseFloat(value) + parseFloat(value_2);
-        // result = parseFloat(x) + parseFloat(value);
-        // displayShow.innerHTML = result;
 
     })
 
@@ -144,46 +146,46 @@
 // Operators for functions
 
 
-Tengo numberAnd [] y inputArray [i]
-
-Presiono tecla 3 el proceso es:
-
-3 ! NaN es true
-
-entonces inputArray ["3"]
-stringNumber = "3"
-
-Presiono tecla 5 el proces es:
-
-5 ! NaN es true
-
-entonces inputArray es ["3", "5"];
-stringNumber es "35"
-
-Presiono "+"
-
-Ahora + ! NaN false
-entonces
-numberAnd [parseFloat de "35"]
-lo hace numberAnd [35]
-
-y luego
-numberAnd [35, "+"]
-stringNumber = ''
-
-esto sólo genera el string nada más
-cuando se tiene por ejemplo numberAnd [33, 'x', 55]
-se presiona '='
-
-dice que ahora el numberAnd [0] es asignado en result (nada cambia en el array sólo se asigna para que el registro del array vaya de 0... en adelante)
-
-
-luego se va a través del array con j++. De ahí sigue hasta que se topa con un NaN
-
-dependiendo del caso hace cosas diferentes pero en el caso de la suma es
-result += numberAndOperatorArray[j+1];
-lo que quiere decir  que es el número parsed de "StringNumber" más el que le sigue a "+" (siendo + en ese momento numberAnd[j] por ende
-numberAnd[j+1] es el que le sigue en la lista)
+// Tengo numberAnd [] y inputArray [i]
+//
+// Presiono tecla 3 el proceso es:
+//
+// 3 ! NaN es true
+//
+// entonces inputArray ["3"]
+// stringNumber = "3"
+//
+// Presiono tecla 5 el proces es:
+//
+// 5 ! NaN es true
+//
+// entonces inputArray es ["3", "5"];
+// stringNumber es "35"
+//
+// Presiono "+"
+//
+// Ahora + ! NaN false
+// entonces
+// numberAnd [parseFloat de "35"]
+// lo hace numberAnd [35]
+//
+// y luego
+// numberAnd [35, "+"]
+// stringNumber = ''
+//
+// esto sólo genera el string nada más
+// cuando se tiene por ejemplo numberAnd [33, 'x', 55]
+// se presiona '='
+//
+// dice que ahora el numberAnd [0] es asignado en result (nada cambia en el array sólo se asigna para que el registro del array vaya de 0... en adelante)
+//
+//
+// luego se va a través del array con j++. De ahí sigue hasta que se topa con un NaN
+//
+// dependiendo del caso hace cosas diferentes pero en el caso de la suma es
+// result += numberAndOperatorArray[j+1];
+// lo que quiere decir  que es el número parsed de "StringNumber" más el que le sigue a "+" (siendo + en ese momento numberAnd[j] por ende
+// numberAnd[j+1] es el que le sigue en la lista)
 
 
 
