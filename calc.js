@@ -18,8 +18,14 @@
         myNumber[i].addEventListener('click', function (event) {
             console.log("you pressed " + this.id);
             acButton.innerHTML = 'C';
-
             updateValue(this.getAttribute("data-value")); // conectado con la variable update value de abajo
+
+            if (resultGiven == true) {
+             //displayShow.innerHTML = inputArray[i];
+                resultGiven = false;
+
+
+            }
         });
     }
 
@@ -122,11 +128,16 @@
         console.log(result)
         displayShow.innerHTML = result;
 
+
     }
 
     // RESULT ------------------
+    resultGiven = false;
     equalsButton.addEventListener('click', function (ev) {
         inputParser(); // efectuar la función
+
+        resultGiven = true;
+        console.log(resultGiven);
     })
 
 
@@ -139,12 +150,15 @@
 
             if (resetPressed == false) {
             resetPressed = true;
+            value = '';
+            inputArray = [];
 
             } else {
 
             value = '';
             ev.target.innerHTML = 'AC';
             displayShow.innerHTML = ' ';
+            inputArray = [];
           //  resetPressed = false;
 
             }

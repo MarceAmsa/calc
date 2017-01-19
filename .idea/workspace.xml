@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb9a1a35-1ab6-4890-b54b-ee923b9af7e8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calc.js" afterPath="$PROJECT_DIR$/calc.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,8 +28,8 @@
           <file leaf-file-name="calc.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/calc.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="141" column="0" lean-forward="true" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+                <state relative-caret-position="560">
+                  <caret line="34" column="20" lean-forward="true" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -44,8 +42,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="36" />
+                <state relative-caret-position="92">
+                  <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -55,11 +53,11 @@
             <entry file="file://$PROJECT_DIR$/calc.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="180">
-                  <caret line="91" column="64" lean-forward="false" selection-start-line="91" selection-start-column="64" selection-end-line="91" selection-end-column="64" />
+                  <caret line="97" column="64" lean-forward="false" selection-start-line="97" selection-start-column="64" selection-end-line="97" selection-end-column="64" />
                   <folding>
-                    <marker date="1484840964000" expanded="true" signature="396:495" ph="{...}" />
-                    <marker date="1484840964000" expanded="true" signature="1538:4574" ph="{...}" />
-                    <marker date="1484840964000" expanded="true" signature="4666:4719" ph="{...}" />
+                    <marker date="1484842825000" expanded="true" signature="396:495" ph="{...}" />
+                    <marker date="1484842825000" expanded="true" signature="1684:4721" ph="{...}" />
+                    <marker date="1484842825000" expanded="true" signature="4838:4954" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -209,12 +207,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1484664993748</updated>
-      <workItem from="1484664996216" duration="29586000" />
+      <workItem from="1484664996216" duration="31541000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29586000" />
+    <option name="totallyTimeSpent" value="31541000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -268,16 +266,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="36" />
+        <state relative-caret-position="92">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/calc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="141" column="0" lean-forward="true" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
+        <state relative-caret-position="560">
+          <caret line="34" column="20" lean-forward="true" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
           <folding />
         </state>
       </provider>
