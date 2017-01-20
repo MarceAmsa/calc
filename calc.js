@@ -164,6 +164,24 @@
             }
         })
 
+    if (isNaN (numberAndOperatorArray [i])) {
+
+            switch(numberAndOperatorArray[i]){
+                case '×':
+                    mult = numberAndOperatorArray [i-1] * numberAndOperatorArray[i+1];
+                    break;
+
+                case '':
+                    mult = numberAndOperatorArray [i-1] / numberAndOperatorArray[i+1];
+                    break;
+
+                default:
+                    numberAndOperatorArray.splice (3, numberAndOperatorArray[i-1], mult);
+            }
+
+
+
+    }
 })();
 
 
