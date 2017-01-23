@@ -48,7 +48,7 @@
 
     for( var i = 0 ; i < myOperator.length ; i++ ){
         myOperator[i].addEventListener('click', function (ev) {
-                console.log("operator pressed ");
+                console.log("operator pressed " + this.id);
                 inputArray.push(this.getAttribute("data-operator"));
                 displayShow.innerHTML = '';
             });
@@ -113,17 +113,64 @@
                         result -= numberAndOperatorArray[j+1]; //needs adEventListener
                         break;
 
-                    case '÷':
-                        result /= numberAndOperatorArray[j+1]; //needs adEventListener
-                        break;
+
+
+                }
+            }
+        }
+
+        for (var i = 0; i < numberAndOperatorArray.length ; i ++ ) {
+            if (isNaN(numberAndOperatorArray[i])) {
+                // Check which operator this is
+                switch (numberAndOperatorArray[i]) {
 
                     case '×':
-                        result *= numberAndOperatorArray[j+1]; //needs adEventListener
+                        mult = (numberAndOperatorArray [i - 1]) * (numberAndOperatorArray[i + 1]);
+                        numberAndOperatorArray.splice(i - 1, 3, mult);
+                        break;
+
+                    case '÷':
+                        mult = (numberAndOperatorArray [i - 1]) / (numberAndOperatorArray[i + 1]);
+                        numberAndOperatorArray.splice(i - 1, 3, mult);
+                        break;
+
+                }
+            }
+
+            if (isNaN(numberAndOperatorArray[i])) {
+                // Check which operator this is
+                switch (numberAndOperatorArray[i]) {
+                    case '+':
+                        result += numberAndOperatorArray[j + 1];
+                        break;
+
+                    case '-':
+                        result -= numberAndOperatorArray[j + 1]; //needs adEventListener
                         break;
 
                 }
             }
         }
+
+        // if (isNaN (numberAndOperatorArray [i])) {
+        //
+        //     var mult = null;
+        //     switch(numberAndOperatorArray[i]){
+        //         case '×':
+        //             // mult = numberAndOperatorArray [i-3] * numberAndOperatorArray[i-1];
+        //             numberAndOperatorArray.splice (i-3, 3 , (numberAndOperatorArray [i-3] * numberAndOperatorArray[i-1]));
+        //             break;
+        //
+        //         case '/':
+        //             mult = numberAndOperatorArray [i-3] / numberAndOperatorArray[i-1];
+        //             break;
+        //
+        //         default:
+        //             if( mult != null )
+        //                 numberAndOperatorArray.splice (i-3, 3 , mult);
+        //     }
+        // }
+
 
         console.log(result)
         displayShow.innerHTML = result;
@@ -164,24 +211,7 @@
             }
         })
 
-    if (isNaN (numberAndOperatorArray [i])) {
 
-            switch(numberAndOperatorArray[i]){
-                case '×':
-                    mult = numberAndOperatorArray [i-1] * numberAndOperatorArray[i+1];
-                    break;
-
-                case '':
-                    mult = numberAndOperatorArray [i-1] / numberAndOperatorArray[i+1];
-                    break;
-
-                default:
-                    numberAndOperatorArray.splice (3, numberAndOperatorArray[i-1], mult);
-            }
-
-
-
-    }
 })();
 
 
