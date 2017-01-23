@@ -21,20 +21,14 @@
         });
     }
 
-    var result = '';
-
     // Save user's input
     inputArray = [];
-
     function updateValue(val_1) { // acá jala los atributos de data value que habían arriba
         // Display update
         displayShow.innerHTML += val_1;
         inputArray.push(val_1) //suma los inputs que se realizar a inputArray
     }
 
-//CLEAR DISPLAY
-
-    var clear = false;
 
 // ----------------------
 
@@ -45,7 +39,6 @@
                 displayShow.innerHTML = '';
             });
     }
-
 
     function inputParser(){
         var numberAndOperatorArray = []; // se nombra las variables no hace nada
@@ -78,35 +71,16 @@
 
                         // Reset current number
                         stringNumber = ''
-
                 }
             }
         }
 
-        // Save last number into the value array
-        numberAndOperatorArray.push(parseFloat(stringNumber));
-
-
+// PRIORITY FOR / AND *
         // Contain the calculation result - Save first number in
         var result = numberAndOperatorArray[0];
 
-        // Loop through number and operators
-        for( var j=1 ; j < numberAndOperatorArray.length ; j++ ){
-
-            // If not a number -> Do operation against the next number (j+1)
-            if( isNaN(numberAndOperatorArray[j])){
-                // Check which operator this is
-                switch(numberAndOperatorArray[j]){
-                    case '+':
-                        result += numberAndOperatorArray[j+1];
-                        break;
-
-                    case '-':
-                        result -= numberAndOperatorArray[j+1]; //needs adEventListener
-                        break;
-                }
-            }
-        }
+        // Save last number into the value array
+        numberAndOperatorArray.push(parseFloat(stringNumber));
 
         for (var i = 0; i < numberAndOperatorArray.length ; i ++ ) {
             if (isNaN(numberAndOperatorArray[i])) {
@@ -116,36 +90,29 @@
                     case '×':
                         mult = (numberAndOperatorArray [i - 1]) * (numberAndOperatorArray[i + 1]);
                         numberAndOperatorArray.splice(i - 1, 3, mult);
-                        if (numberAndOperatorArray.length == 1){
-                            result = parseFloat(numberAndOperatorArray[0]);
-                        }
-
                         break;
 
                     case '÷':
-                        mult = (numberAndOperatorArray [i - 1]) / (numberAndOperatorArray[i + 1]);
-                        numberAndOperatorArray.splice(i - 1, 3, mult);
-                        if (numberAndOperatorArray.length == 1){
-                            result = parseFloat(numberAndOperatorArray[0]);
-                        }
+                        division = (numberAndOperatorArray [i - 1]) / (numberAndOperatorArray[i + 1]);
+                        numberAndOperatorArray.splice(i - 1, 3, division);
                         break;
                 }
             }
         }
 
-
-        for( var j=1 ; j < numberAndOperatorArray.length ; j++ ){
+// ADD AND SUBS INTO STRING
+        for( var j =0 ; j < numberAndOperatorArray.length ; j++ ){
 
             // If not a number -> Do operation against the next number (j+1)
             if( isNaN(numberAndOperatorArray[j])){
                 // Check which operator this is
                 switch(numberAndOperatorArray[j]){
                     case '+':
-                        result += numberAndOperatorArray[j+1];
+                        result += (numberAndOperatorArray [j+1]);
                         break;
 
                     case '-':
-                        result -= numberAndOperatorArray[j+1]; //needs adEventListener
+                        result -= (numberAndOperatorArray [j+1]);
                         break;
                 }
             }

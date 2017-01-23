@@ -29,8 +29,8 @@
           <file leaf-file-name="calc.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/calc.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3760">
-                  <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+                <state relative-caret-position="-160">
+                  <caret line="72" column="41" lean-forward="false" selection-start-line="72" selection-start-column="41" selection-end-line="72" selection-end-column="41" />
                   <folding />
                 </state>
               </provider>
@@ -43,7 +43,7 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="132">
+                <state relative-caret-position="112">
                   <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
                   <folding />
                 </state>
@@ -53,8 +53,8 @@
           <file leaf-file-name="calc.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/calc.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1760">
-                  <caret line="89" column="64" lean-forward="false" selection-start-line="89" selection-start-column="64" selection-end-line="89" selection-end-column="64" />
+                <state relative-caret-position="1520">
+                  <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -67,11 +67,12 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>value</find>
-      <find>result</find>
       <find>// var addOp = document.getElementById('add');</find>
       <find>addOp</find>
       <find>resetPRessed</find>
       <find>displayShow</find>
+      <find>mult</find>
+      <find>result</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -212,12 +213,12 @@
       <updated>1484664993748</updated>
       <workItem from="1484664996216" duration="35690000" />
       <workItem from="1484926804457" duration="2068000" />
-      <workItem from="1485160618255" duration="5657000" />
+      <workItem from="1485160618255" duration="8761000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43415000" />
+    <option name="totallyTimeSpent" value="46519000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -286,7 +287,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
+        <state relative-caret-position="112">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
@@ -294,8 +295,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/calc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3760">
-          <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+        <state relative-caret-position="-160">
+          <caret line="72" column="41" lean-forward="false" selection-start-line="72" selection-start-column="41" selection-end-line="72" selection-end-column="41" />
           <folding />
         </state>
       </provider>
