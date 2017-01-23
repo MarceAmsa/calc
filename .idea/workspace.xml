@@ -29,11 +29,9 @@
           <file leaf-file-name="calc.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/calc.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="522">
-                  <caret line="144" column="30" lean-forward="true" selection-start-line="144" selection-start-column="30" selection-end-line="144" selection-end-column="30" />
-                  <folding>
-                    <marker date="1485169252000" expanded="true" signature="396:495" ph="{...}" />
-                  </folding>
+                <state relative-caret-position="3760">
+                  <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -45,7 +43,7 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="112">
+                <state relative-caret-position="132">
                   <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
                   <folding />
                 </state>
@@ -55,11 +53,9 @@
           <file leaf-file-name="calc.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/calc.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1920">
-                  <caret line="97" column="64" lean-forward="false" selection-start-line="97" selection-start-column="64" selection-end-line="97" selection-end-column="64" />
-                  <folding>
-                    <marker date="1485169252000" expanded="true" signature="396:495" ph="{...}" />
-                  </folding>
+                <state relative-caret-position="1760">
+                  <caret line="89" column="64" lean-forward="false" selection-start-line="89" selection-start-column="64" selection-end-line="89" selection-end-column="64" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -216,12 +212,12 @@
       <updated>1484664993748</updated>
       <workItem from="1484664996216" duration="35690000" />
       <workItem from="1484926804457" duration="2068000" />
-      <workItem from="1485160618255" duration="4323000" />
+      <workItem from="1485160618255" duration="5657000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42081000" />
+    <option name="totallyTimeSpent" value="43415000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -277,9 +273,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2140">
           <caret line="107" column="29" lean-forward="true" selection-start-line="107" selection-start-column="29" selection-end-line="107" selection-end-column="29" />
-          <folding>
-            <marker date="1485169252000" expanded="true" signature="396:495" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -292,7 +286,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
+        <state relative-caret-position="132">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
@@ -300,11 +294,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/calc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="144" column="30" lean-forward="true" selection-start-line="144" selection-start-column="30" selection-end-line="144" selection-end-column="30" />
-          <folding>
-            <marker date="1485169252000" expanded="true" signature="396:495" ph="{...}" />
-          </folding>
+        <state relative-caret-position="3760">
+          <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

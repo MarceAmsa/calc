@@ -1,18 +1,12 @@
 (function myMainFunction() {
     console.log("it's alive!");
 
-
     var myNumber = document.getElementsByClassName("numbers");
     var myOperator = document.getElementsByClassName("operator");
     var displayShow = document.getElementById('display');
     var acButton = document.getElementById('ac');
     var equalsButton = document.getElementById('equals');
 
-
-    // var myFunction = function () {
-    //     var attribute = this.getAttribute("data-value");
-    //     alert(attribute);
-    // };
 
     for (var i = 0; i < myNumber.length; i++) {
         myNumber[i].addEventListener('click', function (event) {
@@ -23,8 +17,6 @@
             if (resultGiven == true) {
              //displayShow.innerHTML = inputArray[i];
                 resultGiven = false;
-
-
             }
         });
     }
@@ -112,9 +104,6 @@
                     case '-':
                         result -= numberAndOperatorArray[j+1]; //needs adEventListener
                         break;
-
-
-
                 }
             }
         }
@@ -127,55 +116,44 @@
                     case '×':
                         mult = (numberAndOperatorArray [i - 1]) * (numberAndOperatorArray[i + 1]);
                         numberAndOperatorArray.splice(i - 1, 3, mult);
+                        if (numberAndOperatorArray.length == 1){
+                            result = parseFloat(numberAndOperatorArray[0]);
+                        }
+
                         break;
 
                     case '÷':
                         mult = (numberAndOperatorArray [i - 1]) / (numberAndOperatorArray[i + 1]);
                         numberAndOperatorArray.splice(i - 1, 3, mult);
+                        if (numberAndOperatorArray.length == 1){
+                            result = parseFloat(numberAndOperatorArray[0]);
+                        }
                         break;
-
-                }
-            }
-
-            if (isNaN(numberAndOperatorArray[i])) {
-                // Check which operator this is
-                switch (numberAndOperatorArray[i]) {
-                    case '+':
-                        result += numberAndOperatorArray[j + 1];
-                        break;
-
-                    case '-':
-                        result -= numberAndOperatorArray[j + 1]; //needs adEventListener
-                        break;
-
                 }
             }
         }
 
-        // if (isNaN (numberAndOperatorArray [i])) {
-        //
-        //     var mult = null;
-        //     switch(numberAndOperatorArray[i]){
-        //         case '×':
-        //             // mult = numberAndOperatorArray [i-3] * numberAndOperatorArray[i-1];
-        //             numberAndOperatorArray.splice (i-3, 3 , (numberAndOperatorArray [i-3] * numberAndOperatorArray[i-1]));
-        //             break;
-        //
-        //         case '/':
-        //             mult = numberAndOperatorArray [i-3] / numberAndOperatorArray[i-1];
-        //             break;
-        //
-        //         default:
-        //             if( mult != null )
-        //                 numberAndOperatorArray.splice (i-3, 3 , mult);
-        //     }
-        // }
+
+        for( var j=1 ; j < numberAndOperatorArray.length ; j++ ){
+
+            // If not a number -> Do operation against the next number (j+1)
+            if( isNaN(numberAndOperatorArray[j])){
+                // Check which operator this is
+                switch(numberAndOperatorArray[j]){
+                    case '+':
+                        result += numberAndOperatorArray[j+1];
+                        break;
+
+                    case '-':
+                        result -= numberAndOperatorArray[j+1]; //needs adEventListener
+                        break;
+                }
+            }
+        }
 
 
         console.log(result)
         displayShow.innerHTML = result;
-
-
     }
 
     // RESULT ------------------
@@ -190,10 +168,8 @@
 
     var resetPressed = false;
 
-
     // AC RESET BUTTON ------------------
         acButton.addEventListener('click', function (ev) {
-
 
             if (resetPressed == false) {
             resetPressed = true;
@@ -210,7 +186,6 @@
 
             }
         })
-
 
 })();
 
