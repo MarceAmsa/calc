@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb9a1a35-1ab6-4890-b54b-ee923b9af7e8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calc.js" afterPath="$PROJECT_DIR$/calc.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -28,8 +29,8 @@
           <file leaf-file-name="calc.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/calc.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+                <state relative-caret-position="396">
+                  <caret line="161" column="0" lean-forward="true" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -53,11 +54,11 @@
             <entry file="file://$PROJECT_DIR$/calc.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="1420">
-                  <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+                  <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
                   <folding>
-                    <marker date="1485262122000" expanded="true" signature="748:920" ph="//..." />
-                    <marker date="1485262122000" expanded="true" signature="1713:1776" ph="//..." />
-                    <marker date="1485262122000" expanded="true" signature="1825:1844" ph="//..." />
+                    <marker date="1485266670000" expanded="true" signature="853:1111" ph="//..." />
+                    <marker date="1485266670000" expanded="true" signature="1879:1942" ph="//..." />
+                    <marker date="1485266670000" expanded="true" signature="1991:2010" ph="//..." />
                   </folding>
                 </state>
               </provider>
@@ -76,8 +77,9 @@
       <find>displayShow</find>
       <find>mult</find>
       <find>result</find>
-      <find>resultGive</find>
       <find>inputArray</find>
+      <find>di</find>
+      <find>resultGive</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -217,12 +219,12 @@
       <updated>1484664993748</updated>
       <workItem from="1484664996216" duration="35690000" />
       <workItem from="1484926804457" duration="2068000" />
-      <workItem from="1485160618255" duration="19170000" />
+      <workItem from="1485160618255" duration="22409000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56928000" />
+    <option name="totallyTimeSpent" value="60167000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -299,8 +301,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/calc.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        <state relative-caret-position="396">
+          <caret line="161" column="0" lean-forward="true" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
           <folding />
         </state>
       </provider>
