@@ -13,20 +13,29 @@
             console.log("you pressed " + this.id);
             acButton.innerHTML = 'C';
             updateValue(this.getAttribute("data-value")); // Toma data-value del html
+
+
         });
     }
 
     // Save user's input
     inputArray = [];
     function updateValue(val_1) { // update de los números presionados
+
+        if (resultGiven == true) {
+            inputArray = [];
+            resultGiven = false;
+
+        }
+
         // Display update
         displayShow.innerHTML += val_1;
         inputArray.push(val_1) //los agrega al array
 
-        if (resultGiven == true){
-            displayShow.innerHTML = val_1;
-            resultGiven = false;
-        }
+
+
+
+
      }
 
 
@@ -37,11 +46,6 @@
                 console.log("operator pressed " + this.id);
                 inputArray.push(this.getAttribute("data-operator"));
                 displayShow.innerHTML = '';
-
-            // if (resultGiven == true){
-            //     numberAndOperatorArray = [];
-            //     resultGiven = false;
-            // }
             });
     }
 
@@ -56,8 +60,10 @@
             // Check if current input is a number
             if( ! isNaN( parseInt(inputArray[i]) ) ){  // ! es un double negative
                 // Concatenate number
+
                 stringNumber += inputArray[i];
                 //inputArray es como numberArray (sin el Operator)
+
 
             } else {
                 // Current input is not a number ( = it is a . or operator
