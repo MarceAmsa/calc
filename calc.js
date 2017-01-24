@@ -6,13 +6,13 @@
     var displayShow = document.getElementById('display');
     var acButton = document.getElementById('ac');
     var equalsButton = document.getElementById('equals');
+    var decimalDot = document.getElementById('decimal');
 
 
     for (var i = 0; i < myNumber.length; i++) {
         myNumber[i].addEventListener('click', function (event) {
             console.log("you pressed " + this.id);
             acButton.innerHTML = 'C';
-
 
             updateValue(this.getAttribute("data-value"), resultGiven); // Toma data-value del html
 
@@ -24,9 +24,27 @@
         });
     }
 
+    decimalAdded = false;
+
     // Save user's input
     inputArray = [];
     function updateValue(val_1, reset) { // update de los números presionados
+
+        // if ((val_1 == ".") && (decimalAdded == false)) {
+        //     decimalAdded = true;
+        //     console.log(decimalAdded);
+        //
+        //     if (decimalAdded == true){
+        //
+        //     }
+        //     //inputArray.push(val_1)
+        //
+        //
+        // } else if (decimalAdded == true){
+        //     console.log ("don't add decimal");
+        // }
+
+
 
         // if (reset) {
         //     inputArray = [];
@@ -48,6 +66,7 @@
 
     for (var i = 0; i < myOperator.length; i++) {
         myOperator[i].addEventListener('click', function (ev) {
+            decimalAdded = false;
             console.log("operator pressed " + this.id);
             inputArray.push(this.getAttribute("data-operator"));
             displayShow.innerHTML = '';
@@ -65,7 +84,7 @@
             // Check if current input is a number
             if (!isNaN(parseInt(inputArray[i]))) {  // ! es un double negative
                 // Concatenate number
-
+                decimalAdded = false;
                 stringNumber += inputArray[i];
                 //inputArray es como numberArray (sin el Operator)
 
@@ -74,7 +93,9 @@
                 // Current input is not a number ( = it is a . or operator
                 switch (inputArray[i]) {
                     case '.':
-                        stringNumber += '.'; // Agrega '.' al inputArray
+
+                          stringNumber += '.'; // Agrega '.' al inputArray
+                          decimalAdded  = true;
                         break;
                     // Default handle all of the operator
                     default:
@@ -162,6 +183,7 @@
 
         inputParser(); // efectuar la función
         resultGiven = true;
+        decimalAdded = false;
         console.log(resultGiven);
 
 

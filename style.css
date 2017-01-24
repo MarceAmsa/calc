@@ -1,19 +1,28 @@
 table {
   width: 300px;
   height: 400px;
+  border-radius: 30px;
+  /*border-collapse: collapse;*/
 }
 table, tr, td {
-  border: 1px solid black;
-  border-collapse: collapse;
+  /*border: 1px solid black;*/
+
 }
 
 td {
+  font-family: Avenir, sans-serif;
+
   text-align: center;
   padding: 10px;
+
 }
 
 .display {
+  font-size: 1.2em;
+  color: #ECF0F1;
   height: 25%;
+  border-radius: 20px 20px 0px 0px;
+  background-color: #333333;
 }
 
 .reset {
@@ -22,9 +31,37 @@ td {
 }
 
 .numbers {
-  color: red;
+
+  font-size: 1em;
+  color: #2C3E50;
+  background-color: #ECF0F1;
+
 }
 
 .operator {
-  color: blue;
+  font-size: 1.2em;
+  color: #ECF0F1;
+  background-color: #E74C3C;
+
 }
+
+.results {
+  font-size: 1.2em;
+  padding: 5px;
+  color: #ECF0F1;
+  background-color: #5FB8B5;
+  border-radius: 0 0 20px 0;
+
+}
+
+#zero {
+  border-radius: 0 0 0 20px;
+}
+
+#ac {
+  color: #2C3E50;
+  background-color: #E1E5E5;
+
+}
+
+
