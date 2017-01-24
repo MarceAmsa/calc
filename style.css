@@ -1,6 +1,6 @@
 table {
-  width: 300px;
-  height: 400px;
+  width: 250px;
+  height: 350px;
   border-radius: 30px;
   /*border-collapse: collapse;*/
 }
@@ -18,7 +18,11 @@ td {
 }
 
 .display {
-  font-size: 1.2em;
+  text-align: right;
+  letter-spacing: 1px;
+  padding-right: 30px;
+  padding-top: 40px;
+  font-size: 1.5em;
   color: #ECF0F1;
   height: 25%;
   border-radius: 20px 20px 0px 0px;
@@ -59,6 +63,7 @@ td {
 }
 
 #ac {
+  padding-left: 25px;
   color: #2C3E50;
   background-color: #E1E5E5;
 

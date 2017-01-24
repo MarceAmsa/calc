@@ -30,21 +30,17 @@
     inputArray = [];
     function updateValue(val_1, reset) { // update de los números presionados
 
-        // if ((val_1 == ".") && (decimalAdded == false)) {
-        //     decimalAdded = true;
-        //     console.log(decimalAdded);
-        //
-        //     if (decimalAdded == true){
-        //
-        //     }
-        //     //inputArray.push(val_1)
-        //
-        //
-        // } else if (decimalAdded == true){
-        //     console.log ("don't add decimal");
-        // }
+        if ((val_1 == ".") && (decimalAdded == false)) {
+            decimalAdded = true;
+            console.log(decimalAdded);
+
+            //inputArray.push(val_1)
 
 
+        } else if ((val_1 == ".") && (decimalAdded == true)){
+            console.log ("don't add decimal");
+            return;
+        }
 
         // if (reset) {
         //     inputArray = [];
@@ -119,6 +115,12 @@
         numberAndOperatorArray.push(parseFloat(stringNumber));
 
         for (var i = 0; i < numberAndOperatorArray.length; i++) {
+
+            if (isNaN (parseInt (numberAndOperatorArray[numberAndOperatorArray.length -1]))){
+                numberAndOperatorArray[numberAndOperatorArray.length-1] = 0;
+            }
+
+
             if (isNaN(numberAndOperatorArray[i])) {
                 // Check which operator this is
 
