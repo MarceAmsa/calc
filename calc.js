@@ -12,22 +12,22 @@
         myNumber[i].addEventListener('click', function (event) {
             console.log("you pressed " + this.id);
             acButton.innerHTML = 'C';
-            updateValue(this.getAttribute("data-value")); // conectado con la variable update value de abajo
-
-            if (resultGiven == true) {
-             //displayShow.innerHTML = inputArray[i];
-                resultGiven = false;
-            }
+            updateValue(this.getAttribute("data-value")); // Toma data-value del html
         });
     }
 
     // Save user's input
     inputArray = [];
-    function updateValue(val_1) { // acá jala los atributos de data value que habían arriba
+    function updateValue(val_1) { // update de los números presionados
         // Display update
         displayShow.innerHTML += val_1;
-        inputArray.push(val_1) //suma los inputs que se realizar a inputArray
-    }
+        inputArray.push(val_1) //los agrega al array
+
+        if (resultGiven == true){
+            displayShow.innerHTML = val_1;
+            resultGiven = false;
+        }
+     }
 
 
 // ----------------------
@@ -37,40 +37,44 @@
                 console.log("operator pressed " + this.id);
                 inputArray.push(this.getAttribute("data-operator"));
                 displayShow.innerHTML = '';
+
+            // if (resultGiven == true){
+            //     numberAndOperatorArray = [];
+            //     resultGiven = false;
+            // }
             });
     }
 
     function inputParser(){
-        var numberAndOperatorArray = []; // se nombra las variables no hace nada
+        var numberAndOperatorArray = [];
 
-        var stringNumber = ''; // se nombra la variable, tampoco hace nada
+        var stringNumber = ''; // Número actual en string
 
         // Loop through input: ['1', '.', '1', '+', '1']
-        for( var i=0 ; i < inputArray.length ; i++ ){ // viene de la función update value, va uno por uno
+        for( var i=0 ; i < inputArray.length ; i++ ){
 
             // Check if current input is a number
-            if( ! isNaN( parseInt(inputArray[i]) ) ){  //isNaN es "no es número" pero con ! es lo contrario ósea "es número"
+            if( ! isNaN( parseInt(inputArray[i]) ) ){  // ! es un double negative
                 // Concatenate number
-                // input array son todos los botones que se presionaron anteriormente lo que genera una lista, que luego se concatena
-                stringNumber += inputArray[i]; //inputArray es una lista diferente a numberAndOperatorArray
-                //la línea alimenta todos los currentnumber a input array que está arriba como variable definida
+                stringNumber += inputArray[i];
+                //inputArray es como numberArray (sin el Operator)
 
             } else {
                 // Current input is not a number ( = it is a . or operator
                 switch(inputArray[i]){
                     case '.':
-                        stringNumber += '.'; // si en esa lista hay un punto, entonces el punto se mete dentro del número
+                        stringNumber += '.'; // Agrega '.' al inputArray
                     break;
                     // Default handle all of the operator
                     default:
                         // Save number into value array
-                      numberAndOperatorArray.push(parseFloat(stringNumber)); //ACÁ es que se empieza a crear el numberOperatorArray, antes de eso estaba solamente vacía
+                      numberAndOperatorArray.push(parseFloat(stringNumber)); // Se llena NumberAndOperatorArray
 
                         // Save operator into value array
                        numberAndOperatorArray.push(inputArray[i]);
 
                         // Reset current number
-                        stringNumber = ''
+                        stringNumber = '';
                 }
             }
         }
@@ -85,16 +89,25 @@
         for (var i = 0; i < numberAndOperatorArray.length ; i ++ ) {
             if (isNaN(numberAndOperatorArray[i])) {
                 // Check which operator this is
+
+
                 switch (numberAndOperatorArray[i]) {
 
                     case '×':
                         mult = (numberAndOperatorArray [i - 1]) * (numberAndOperatorArray[i + 1]);
                         numberAndOperatorArray.splice(i - 1, 3, mult);
+
+                        if (numberAndOperatorArray.length == 1) {
+                            result = mult;
+                        }
                         break;
 
                     case '÷':
                         division = (numberAndOperatorArray [i - 1]) / (numberAndOperatorArray[i + 1]);
                         numberAndOperatorArray.splice(i - 1, 3, division);
+                        if (numberAndOperatorArray.length == 1) {
+                            result = division;
+                        }
                         break;
                 }
             }
@@ -118,8 +131,8 @@
             }
         }
 
-
         console.log(result)
+        inputArray = [result];
         displayShow.innerHTML = result;
     }
 
@@ -130,6 +143,8 @@
 
         resultGiven = true;
         console.log(resultGiven);
+
+
     })
 
 
@@ -157,50 +172,6 @@
 })();
 
 
-
-// Operators for functions
-
-
-// Tengo numberAnd [] y inputArray [i]
-//
-// Presiono tecla 3 el proceso es:
-//
-// 3 ! NaN es true
-//
-// entonces inputArray ["3"]
-// stringNumber = "3"
-//
-// Presiono tecla 5 el proces es:
-//
-// 5 ! NaN es true
-//
-// entonces inputArray es ["3", "5"];
-// stringNumber es "35"
-//
-// Presiono "+"
-//
-// Ahora + ! NaN false
-// entonces
-// numberAnd [parseFloat de "35"]
-// lo hace numberAnd [35]
-//
-// y luego
-// numberAnd [35, "+"]
-// stringNumber = ''
-//
-// esto sólo genera el string nada más
-// cuando se tiene por ejemplo numberAnd [33, 'x', 55]
-// se presiona '='
-//
-// dice que ahora el numberAnd [0] es asignado en result (nada cambia en el array sólo se asigna para que el registro del array vaya de 0... en adelante)
-//
-//
-// luego se va a través del array con j++. De ahí sigue hasta que se topa con un NaN
-//
-// dependiendo del caso hace cosas diferentes pero en el caso de la suma es
-// result += numberAndOperatorArray[j+1];
-// lo que quiere decir  que es el número parsed de "StringNumber" más el que le sigue a "+" (siendo + en ese momento numberAnd[j] por ende
-// numberAnd[j+1] es el que le sigue en la lista)
 
 
 
