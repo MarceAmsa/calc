@@ -7,6 +7,7 @@
     var acButton = document.getElementById('ac');
     var equalsButton = document.getElementById('equals');
 
+
     for (var i = 0; i < myNumber.length; i++) {
         myNumber[i].addEventListener('click', function (event) {
             console.log("you pressed " + this.id);
@@ -24,8 +25,8 @@
         });
     }
 
-    decimalAdded = false;
     // Save user's input
+    decimalAdded = false;
     inputArray = [];
     function updateValue(val_1, reset) { // update de los números presionados
 
@@ -33,15 +34,12 @@
             decimalAdded = true;
             console.log(decimalAdded);
 
-
         } else if ((val_1 == ".") && (decimalAdded == true)) {
             console.log("don't add decimal");
             return;
 
-
         } else if (resultGiven == true) {
             console.log("don't add Number");
-            //return;
         }
 
         // Display update
@@ -96,8 +94,7 @@
 
 
 // PRIORITY FOR / AND *
-        // Contain the calculation result - Save first number in
-        //var result = numberAndOperatorArray[0];
+
         var result;
         // Save last number into the value array
         numberAndOperatorArray.push(parseFloat(stringNumber));
@@ -112,7 +109,6 @@
                 // Check which operator this is
 
                 switch (numberAndOperatorArray[i]) {
-
                     case '×':
                         mult = (numberAndOperatorArray [i - 1]) * (numberAndOperatorArray[i + 1]);
                         numberAndOperatorArray.splice(i - 1, 3, mult);
@@ -157,7 +153,6 @@
             }
         }
 
-
         console.log(result);
         inputArray = [result];
         displayShow.innerHTML = result;
@@ -182,8 +177,8 @@
 
     });
 
-    var resetPressed = false;
     // AC RESET BUTTON ------------------
+    var resetPressed = false;
     acButton.addEventListener('click', function (ev) {
 
         resultGiven = false;
@@ -193,14 +188,18 @@
             inputArray = [];
 
         } else {
-
             value = '';
             ev.target.innerHTML = 'AC';
             displayShow.innerHTML = ' ';
             inputArray = [];
-            //  resetPressed = false;
-
         }
+    })
+
+    document.addEventListener("keydown", function (event) {
+        switch (event.keyCode) {
+            case
+        }
+
     })
 
 })();
