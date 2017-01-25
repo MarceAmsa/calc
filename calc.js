@@ -14,12 +14,16 @@
             console.log("you pressed " + this.id);
             acButton.innerHTML = 'C';
 
-            updateValue(this.getAttribute("data-value"), resultGiven); // Toma data-value del html
+            if (resultGiven == true) {
+                //resultGiven = false;
+                displayShow.innerHTML = '';
+                inputArray = [];
+                console.log ("reset inputArray");
+               // return;
 
-            if (resultGiven) {
-                resultGiven = false;
             }
 
+            updateValue(this.getAttribute("data-value"), resultGiven); // Toma data-value del html
 
         });
     }
@@ -34,22 +38,16 @@
             decimalAdded = true;
             console.log(decimalAdded);
 
-            //inputArray.push(val_1)
-
 
         } else if ((val_1 == ".") && (decimalAdded == true)){
             console.log ("don't add decimal");
             return;
+
+
+        } else if (resultGiven == true) {
+            console.log ("don't add Number");
+            //return;
         }
-
-        // if (reset) {
-        //     inputArray = [];
-        //     displayShow.innerHTML = val_1;
-        //
-        // } else {
-        //     displayShow.innerHTML += val_1;
-        // }
-
 
         // Display update
         displayShow.innerHTML += val_1;
@@ -63,6 +61,7 @@
     for (var i = 0; i < myOperator.length; i++) {
         myOperator[i].addEventListener('click', function (ev) {
             decimalAdded = false;
+            resultGiven = false;
             console.log("operator pressed " + this.id);
             inputArray.push(this.getAttribute("data-operator"));
             displayShow.innerHTML = '';
@@ -79,17 +78,16 @@
 
             // Check if current input is a number
             if (!isNaN(parseInt(inputArray[i]))) {  // ! es un double negative
+
                 // Concatenate number
                 decimalAdded = false;
                 stringNumber += inputArray[i];
                 //inputArray es como numberArray (sin el Operator)
 
-
             } else {
                 // Current input is not a number ( = it is a . or operator
                 switch (inputArray[i]) {
                     case '.':
-
                           stringNumber += '.'; // Agrega '.' al inputArray
                           decimalAdded  = true;
                         break;
@@ -101,7 +99,7 @@
                         // Save operator into value array
                         numberAndOperatorArray.push(inputArray[i]);
 
-                        // Reset current number
+                        // Reset current string number
                         stringNumber = '';
                 }
             }
@@ -150,18 +148,26 @@
 // ADD AND SUBS INTO STRING
         for (var j = 0; j < numberAndOperatorArray.length; j++) {
 
+            if (numberAndOperatorArray.length == 1) {
+                result = numberAndOperatorArray[0];
+            }
+
             // If not a number -> Do operation against the next number (j+1)
             if (isNaN(numberAndOperatorArray[j])) {
+
+
+
                 // Check which operator this is
                 switch (numberAndOperatorArray[j]) {
                     case '+':
                         result += (numberAndOperatorArray [j + 1]);
+
                         break;
 
                     case '-':
                         result -= (numberAndOperatorArray [j + 1]);
-                        break;
 
+                        break;
                 }
             }
         }
@@ -199,6 +205,7 @@
     // AC RESET BUTTON ------------------
     acButton.addEventListener('click', function (ev) {
 
+        resultGiven = false;
         if (resetPressed == false) {
             resetPressed = true;
             value = '';
