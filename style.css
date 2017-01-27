@@ -41,22 +41,55 @@ td {
   background-color: #ECF0F1;
 
 }
+.numbers:hover {
+   background-color: #E1E5E5;
+ }
+
+.numbers:active {
+  background-color: #DCDFE0;
+}
+
+#ac:hover {
+  background-color: #E1E5E5;
+}
+
+#ac:active {
+  background-color: #DCDFE0;
+}
+
 
 .operator {
   font-size: 1.2em;
   color: #ECF0F1;
   background-color: #E74C3C;
+}
+.operator:hover {
+  background-color: #DB4839;
 
 }
+.operator:active {
+  background-color: darkred;
+
+}
+
 
 .results {
   font-size: 1.2em;
   padding: 5px;
   color: #ECF0F1;
-  background-color: #5FB8B5;
+  background-color: #66C5C2;
   border-radius: 0 0 20px 0;
-
 }
+
+.results:hover {
+  background-color: #5FB8B5;
+}
+.results:active {
+  background-color: #59ACA9;
+}
+
+
+
 
 #zero {
   border-radius: 0 0 0 20px;
@@ -65,7 +98,7 @@ td {
 #ac {
   padding-left: 25px;
   color: #2C3E50;
-  background-color: #E1E5E5;
+  background-color: #ECF0F1;
 
 }
 
