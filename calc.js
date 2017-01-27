@@ -9,7 +9,7 @@
 
     document.addEventListener('keydown', function (event) {
 
-            console.log(event.key, event.keyCode);
+            //console.log(event.key, event.keyCode);
             if (event.keyCode >= 48 && event.keyCode <= 57) {
                 val = event.keyCode - 48;
                 console.log(val);
@@ -18,8 +18,8 @@
                 numberInput(val.toString())
 
 
-            } else if (event.keyCode == 36) {
-
+            } else if (event.keyCode == 12) {
+                console.log ("cleared");
                 clear();
             }
 
@@ -265,12 +265,14 @@
     resultGiven = false;
     equalsButton.addEventListener('click', resultEnter);
 
-    // AC RESET BUTTON ------------------
+
+// AC RESET BUTTON ------------------
+    var resetPressed = false;
+    resultGiven = false;
 
 
     function clear() {
 
-        resultGiven = false;
         if (resetPressed == false) {
             resetPressed = true;
             value = '';
@@ -278,19 +280,13 @@
 
         } else {
             value = '';
-            this.innerHTML = 'AC';
+            ac.innerHTML = 'AC';
             displayShow.innerHTML = ' ';
             inputArray = [];
         }
 
     }
 
-    // var resetPressed = false;
-    // acButton.addEventListener('click', function (ev) {
-    //     _dwdw();
-    // })
-
-    var resetPressed = false;
     acButton.addEventListener('click', clear)
 
 
