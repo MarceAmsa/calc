@@ -19,55 +19,53 @@
 
 
             } else if (event.keyCode == 12) {
-                console.log ("cleared");
+                console.log("cleared");
+                displayShow.innerHTML = '';
                 clear();
+
+            } else if (event.keyCode == 13 || event.keyCode == 187) {
+
+                resultEnter();
             }
+
 
             // return val;
             var x;
             if (event.keyCode >= 106 && event.keyCode <= 111) {
                 switch (event.keyCode) {
                     case 111:
-                        console.log("/");
+                        operatorInput("÷");
                         //division function
                         break;
 
                     case 110:
-                        console.log(".");
-
                         numberInput('.');
                         //decimal function
                         break;
 
                     case 109:
-                        console.log("-");
                         //minus function
+                        operatorInput(event.key);
                         break;
 
                     case 107:
-                        console.log("+");
-
                         operatorInput(event.key);
                         //add function
                         break;
 
                     case 106:
-                        console.log("*");
                         // times function
+                        operatorInput("×");
                         break;
-
 
                     default:
                         return;
-
                 }
-
-
             }
 
-        if (event.keyCode == 13){
-            resultEnter();
-        }
+            if (event.keyCode == 13) {
+                resultEnter();
+            }
 
 
         }, true
@@ -79,18 +77,9 @@
 
             numberInput(this.getAttribute("data-value"));
 
-            //
-            // acButton.innerHTML = 'C';
-            //
-            // if (resultGiven == true) {
-            //     displayShow.innerHTML = '';
-            //     inputArray = [];
-            //     console.log("reset inputArray");
-            //     resultGiven = false;
-            // }
-            // updateValue(this.getAttribute("data-value"), resultGiven); // Toma data-value del html
         });
     }
+
 
     function numberInput(numberString) {
         acButton.innerHTML = 'C';
@@ -137,13 +126,12 @@
         displayShow.innerHTML = '';
 
 
-
     }
+
     for (var i = 0; i < myOperator.length; i++) {
         myOperator[i].addEventListener('click', function (ev) {
 
-
-            operatorInput ( this.getAttribute("data-operator") );
+            operatorInput(this.getAttribute("data-operator"));
         });
     }
 
@@ -191,38 +179,25 @@
             numberAndOperatorArray[numberAndOperatorArray.length - 1] = 0;
         }
 
-        for (var i = 0; i < numberAndOperatorArray.length; i++) {
+        function multCase () {
+            mult = (numberAndOperatorArray [j - 1]) * (numberAndOperatorArray[j + 1]);
+            numberAndOperatorArray.splice(j- 1, 3, mult);
 
-
-            if (isNaN(numberAndOperatorArray[i])) {
-                // Check which operator this is
-
-                switch (numberAndOperatorArray[i]) {
-                    case '×':
-                        mult = (numberAndOperatorArray [i - 1]) * (numberAndOperatorArray[i + 1]);
-                        numberAndOperatorArray.splice(i - 1, 3, mult);
-
-                        if (numberAndOperatorArray.length == 1) {
-                            result = mult;
-                        }
-                        break;
-
-                    case '÷':
-                        division = (numberAndOperatorArray [i - 1]) / (numberAndOperatorArray[i + 1]);
-                        numberAndOperatorArray.splice(i - 1, 3, division);
-                        if (numberAndOperatorArray.length == 1) {
-                            result = division;
-                        }
-                        break;
-                }
+            if (numberAndOperatorArray.length == 1) {
+                result = mult;
             }
-
-            result = numberAndOperatorArray[0];
         }
-        if (numberAndOperatorArray.length == 1) {
-            result = numberAndOperatorArray[0];
 
+        function divCase () {
+            division = (numberAndOperatorArray [j - 1]) / (numberAndOperatorArray[j + 1]);
+            numberAndOperatorArray.splice(j - 1, 3, division);
+            if (numberAndOperatorArray.length == 1) {
+                result = division;
+            }
         }
+
+
+        result = numberAndOperatorArray[0];
 // ADD AND SUBS INTO STRING
         for (var j = 0; j < numberAndOperatorArray.length; j++) {
             // If not a number -> Do operation against the next number (j+1)
@@ -232,22 +207,35 @@
                     case '+':
                         result += (numberAndOperatorArray [j + 1]);
                         break;
-
                     case '-':
                         result -= (numberAndOperatorArray [j + 1]);
+                        break;
+
+                    case '×':
+                        multCase();
+                        break;
+
+                    case '÷':
+                        divCase();
                         break;
                 }
             }
         }
 
+        if (numberAndOperatorArray.length == 1) {
+            result = numberAndOperatorArray[0];
+
+        }
+
         console.log(result);
         inputArray = [result];
+
         displayShow.innerHTML = result;
     }
 
     // RESULT ------------------
 
-    function resultEnter () {
+    function resultEnter() {
         if ((inputArray.length == 0) || (resultGiven == true)) {
             return
         }
