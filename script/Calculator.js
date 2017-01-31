@@ -19,7 +19,7 @@ var Calculator = function () {
                 return;
             }
 
-            if ((val_1 == "-") && (minusAdded == false)){
+            if ((val_1 == "-") && (_minusAdded == false)){
                 _minusAdded = true;
                 console.log (_minusAdded);
 
@@ -42,7 +42,7 @@ var Calculator = function () {
 
             console.log("Input pressed " + input);
 
-            if (( input == '.') || (input == '-')) // ***
+            if ( input == '.') //|| (input == '-')) // ***
                 numberInput();
             else if( isNaN(parseInt(input)) )
                 operatorInput();
@@ -105,7 +105,7 @@ var Calculator = function () {
                             break;
 
                         case '-':
-                            if  ((_inputArray.length == 1) || (isNaN(_inputArray[i-1]))){
+                            if  ((isNaN(_inputArray[i-1]))){
                                 stringNumber += '-'; //currentNumber individually
                             }
                             break;
@@ -117,7 +117,10 @@ var Calculator = function () {
                             numberAndOperatorArray.push(_inputArray[i]);
                             // Reset current string number
                             stringNumber = '';
+
+
                     }
+
                 }
             }
 
@@ -178,7 +181,6 @@ var Calculator = function () {
                             break;
                         case '-':
                             result -= (numberAndOperatorArray [j + 1]);
-                            _minusAdded = true;
                             break;
 
 
