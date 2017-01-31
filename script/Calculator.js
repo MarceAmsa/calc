@@ -200,8 +200,9 @@ var Calculator = function () {
             _minusAdded = false;
 
 
-
-            return result;
+            result = result.toString();
+            result = result.slice (0, (result.indexOf('.'))+5);
+            return parseFloat(result);
         };
 
 

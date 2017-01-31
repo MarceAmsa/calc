@@ -33,12 +33,6 @@
 
 
                         acButton.innerHTML = 'C';
-                        // if (inputArray[i-1] == ('-')){
-                        //     displayShow.innerHTML += "-" + inputValue;
-                        //     return;
-                        // }
-
-
                         if( inputArray.length == 1 ) {
                             displayShow.innerHTML = inputValue;
                         } else {
