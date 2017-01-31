@@ -6,7 +6,7 @@ var Calculator = function () {
             _resultGiven        = false;
 
         /*
-         Save number OR . in input array
+         Save number OR . in input array TODO: iclude "-"
          */
         function _updateCurrentNumber(val_1){
             if ((val_1 == ".") && (_decimalAdded == false)) {
@@ -84,7 +84,6 @@ var Calculator = function () {
                 // Check if current input is a number
                 if (!isNaN(parseInt(_inputArray[i]))) {  // ! es un double negative
                     // Concatenate number
-                    //decimalAdded = false;
                     stringNumber += _inputArray[i];
                     //inputArray es como numberArray (sin el Operator)
 
@@ -115,7 +114,8 @@ var Calculator = function () {
             var result;
             // Save last number into the value array
             if (isNaN((numberAndOperatorArray[numberAndOperatorArray.length - 1]))) {
-                numberAndOperatorArray[numberAndOperatorArray.length - 1] = 0;
+                //numberAndOperatorArray[numberAndOperatorArray.length - 1] = 0;
+                numberAndOperatorArray.pop();
             }
 
             function multCase () {

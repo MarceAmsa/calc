@@ -64,8 +64,8 @@
      Bind keyboord
      */
 
-// here you can separate keyboard and click
-    var mySecondCalculator = calculatorInstance;
+//If you comment this then you get the regular calculator
+    var mySecondCalculator = new Calculator();
 
     function bindKeyboardInput(){
         document.addEventListener('keydown', function (event) {
