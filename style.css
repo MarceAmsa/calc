@@ -34,28 +34,20 @@ td {
   text-align: left;
 }
 
-.numbers {
-
+.numbers, #ac {
   font-size: 1em;
   color: #2C3E50;
   background-color: #ECF0F1;
 
 }
-.numbers:hover {
-   background-color: #E1E5E5;
- }
-
-.numbers:active {
+.numbers:active, #ac:active  {
   background-color: #DCDFE0;
 }
 
-#ac:hover {
+.numbers:hover, #ac:hover {
   background-color: #E1E5E5;
 }
 
-#ac:active {
-  background-color: #DCDFE0;
-}
 
 
 .operator {
@@ -97,9 +89,6 @@ td {
 
 #ac {
   padding-left: 25px;
-  color: #2C3E50;
-  background-color: #ECF0F1;
-
 }
 
 
