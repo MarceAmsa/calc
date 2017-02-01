@@ -76,11 +76,17 @@ var Calculator = function () {
         // Loop through input: ['1', '.', '1', '+', '1']
         for (var i = 0; i < _inputArray.length; i++) {
 
+
+
             // Check if current input is a number
             if (!isNaN(parseInt(_inputArray[i]))) {  // ! es un double negative
                 // Concatenate number
                 stringNumber += _inputArray[i];
                 //inputArray es como numberArray (sin el Operator)
+
+            // } else if ((_inputArray == '-') && (isNaN(_inputArray[i - 1]))) {
+            //     stringNumber += '-'; //currentNumber individually
+
 
             } else {
                 // Current input is not a number ( = it is a . or operator
@@ -89,11 +95,13 @@ var Calculator = function () {
                         stringNumber += '.'; // Agrega '.' al inputArray
                         break;
 
-                    // case '-':
-                    //     if ((isNaN(_inputArray[i - 1]))) {
-                    //         stringNumber += '-'; //currentNumber individually
-                    //     }
-                    //     break;
+                    case '-':
+                        if ((isNaN(parseInt(_inputArray[i - 1])))) {
+                            stringNumber += '-'; //currentNumber individually
+                        } else {
+
+                        }
+                        break;
                     // Default handle all of the operator
                     default:
                         // Save number into value array
@@ -165,6 +173,12 @@ var Calculator = function () {
                         result += (numberAndOperatorArray [j + 1]);
                         break;
                     case '-':
+
+                        // if ((isNaN(_inputArray[i - 1]))) {
+                        //     stringNumber += '-'; //currentNumber individually
+                        // } else {
+                        //
+                        // }
                         result -= (numberAndOperatorArray [j + 1]);
                         break;
                 }
