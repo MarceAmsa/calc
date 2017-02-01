@@ -89,11 +89,11 @@ var Calculator = function () {
                         stringNumber += '.'; // Agrega '.' al inputArray
                         break;
 
-                    case '-':
-                        if ((isNaN(_inputArray[i - 1]))) {
-                            stringNumber += '-'; //currentNumber individually
-                        }
-                        break;
+                    // case '-':
+                    //     if ((isNaN(_inputArray[i - 1]))) {
+                    //         stringNumber += '-'; //currentNumber individually
+                    //     }
+                    //     break;
                     // Default handle all of the operator
                     default:
                         // Save number into value array
@@ -156,7 +156,7 @@ var Calculator = function () {
         }
 
 
-        for (var j = 1; j < numberAndOperatorArray.length; j++) {
+        for (var j = 0; j < numberAndOperatorArray.length; j++) {
             // If not a number -> Do operation against the next number (j+1)
             if (isNaN(numberAndOperatorArray[j])) {
                 // Check which operator this is

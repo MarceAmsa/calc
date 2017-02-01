@@ -41,7 +41,6 @@
         // Bind operators
         for (i = 0; i < myOperator.length; i++) {
             myOperator[i].addEventListener('click', function (ev) {
-
                 var operator = this.getAttribute("data-operator");
                 calculatorInstance.saveInput(operator,
                     function onInputSaved(inputArray, resultGiven) {
@@ -58,6 +57,7 @@
 
         equalsButton.addEventListener('click', function () {
             displayShow.innerHTML = calculatorInstance.calculate();
+            inputArray =[];
         });
         // Bind clear button
         acButton.addEventListener('click', function () {
