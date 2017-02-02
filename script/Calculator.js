@@ -28,20 +28,17 @@ var Calculator = function () {
     this.saveInput = function (input, callbackFunction) { //this = Calculator
         console.log("Input pressed " + input);
 
-        // if ((input == '.') && (_decimalAdded = false)) {
-        //     _decimalAdded = true;
-        //     numberInput();
-        // } else if ((_decimalAdded == true)) {
-        //     console.log("no decimal");
-        //     return;
-        // }
+        if ((_decimalAdded == false) && (input == '.')) {
 
-        if ((input == '.') && (_decimalAdded = false))  { //|| (input == '-')) // ***
             _decimalAdded = true;
             console.log(_decimalAdded);
             numberInput();
-        }
-        else if (isNaN(parseInt(input)))
+
+        } else if ((_decimalAdded == true) && (input == '.')){
+            console.log ("no decimal");
+            return;
+
+        } else if (isNaN(parseInt(input)))
             operatorInput();
         else
             numberInput();
