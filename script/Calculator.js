@@ -21,12 +21,10 @@ var Calculator = function () {
         _inputArray.push(val_1) //los agrega al array
     } //
 
-
     /*
      Public functions
      */
     this.saveInput = function (input, callbackFunction) { //this = Calculator
-
         console.log("Input pressed " + input);
 
         if (input == '.') //|| (input == '-')) // ***
@@ -53,7 +51,6 @@ var Calculator = function () {
         }
 
         callbackFunction(_inputArray, _resultGiven);
-
     };
 
     /*
@@ -69,7 +66,6 @@ var Calculator = function () {
             return _inputArray[0];
         }
 
-
         var numberAndOperatorArray = [];
         var stringNumber = ''; // Número actual en string
 
@@ -77,16 +73,11 @@ var Calculator = function () {
         for (var i = 0; i < _inputArray.length; i++) {
 
 
-
             // Check if current input is a number
             if (!isNaN(parseInt(_inputArray[i]))) {  // ! es un double negative
                 // Concatenate number
                 stringNumber += _inputArray[i];
                 //inputArray es como numberArray (sin el Operator)
-
-            // } else if ((_inputArray == '-') && (isNaN(_inputArray[i - 1]))) {
-            //     stringNumber += '-'; //currentNumber individually
-
 
             } else {
                 // Current input is not a number ( = it is a . or operator
@@ -96,11 +87,12 @@ var Calculator = function () {
                         break;
 
                     case '-':
-                        if ((isNaN(parseInt(_inputArray[i - 1])))) {
-                            stringNumber += '-'; //currentNumber individually
-                        } else {
+                        stringNumber += '-';
 
-                        }
+                        // if ((isNaN(parseInt(_inputArray[i - 1])))) {
+                        //     stringNumber += '-'; //currentNumber individually
+                        // }
+                        //****** works with +-1 but not with --1
                         break;
                     // Default handle all of the operator
                     default:
@@ -117,12 +109,15 @@ var Calculator = function () {
             }
         }
 
-        numberAndOperatorArray.push(parseFloat(stringNumber));
+        // Save last number into the value array
+        if( stringNumber  != '')
+            numberAndOperatorArray.push(parseFloat(stringNumber));
 
 // PRIORITY FOR / AND *
 
         var result;
-        // Save last number into the value array
+
+        // If last element in array is an operator -> Remove it
         if (isNaN((numberAndOperatorArray[numberAndOperatorArray.length - 1]))) {
             //numberAndOperatorArray[numberAndOperatorArray.length - 1] = 0;
             numberAndOperatorArray.pop();
@@ -173,12 +168,6 @@ var Calculator = function () {
                         result += (numberAndOperatorArray [j + 1]);
                         break;
                     case '-':
-
-                        // if ((isNaN(_inputArray[i - 1]))) {
-                        //     stringNumber += '-'; //currentNumber individually
-                        // } else {
-                        //
-                        // }
                         result -= (numberAndOperatorArray [j + 1]);
                         break;
                 }
