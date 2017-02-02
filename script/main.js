@@ -39,6 +39,7 @@
         // Bind operators
         for (i = 0; i < myOperator.length; i++) {
             myOperator[i].addEventListener('click', function (ev) {
+
                 var operator = this.getAttribute("data-operator");
                 calculatorInstance.saveInput(operator,
                     function onInputSaved(inputArray, resultGiven) {
@@ -55,7 +56,7 @@
 
         equalsButton.addEventListener('click', function () {
             displayShow.innerHTML = calculatorInstance.calculate();
-            inputArray =[];
+            inputArray = [];
         });
         // Bind clear button
         acButton.addEventListener('click', function () {
@@ -84,7 +85,7 @@
                         console.log(val);
 
                         mySecondCalculator.saveInput(val.toString(), function (inputArray, resGiven) {
-                        console.log(inputArray)
+                        console.log(inputArray);
                         displayShow.innerHTML += val;
                     });
 
@@ -102,6 +103,8 @@
 
                     console.log('Result is ' + result);
                     displayShow.innerHTML = result;
+
+
                 }
 
                 if (event.keyCode >= 106 && event.keyCode <= 111) {

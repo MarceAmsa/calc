@@ -8,28 +8,12 @@ var Calculator = function () {
     _zeroPressed  = false;
 
     /*
-     Save number , . OR - in input array
-     */
-    // function _updateCurrentNumber(val_1) {
-    //     if ((val_1 == ".") && (_decimalAdded == false)) {
-    //         _decimalAdded = true;
-    //         console.log(_decimalAdded);
-    //
-    //     } else if ((val_1 == ".") && (_decimalAdded == true)) {
-    //         console.log("don't add decimal");
-    //         return;
-    //     }
-    //     _inputArray.push(val_1) //los agrega al array
-    // } //
-
-    /*
      Public functions
      */
     this.saveInput = function (input, callbackFunction) { //this = Calculator
         console.log("Input pressed " + input);
 
         if ((_decimalAdded == false) && (input == '.')) {
-
             _decimalAdded = true;
             console.log(_decimalAdded);
             numberInput();
@@ -37,10 +21,9 @@ var Calculator = function () {
         } else if ((_decimalAdded == true) && (input == '.')){
             console.log ("no decimal");
             return;
-
-        } else if (isNaN(parseInt(input)))
+        } else if (isNaN(parseInt(input))) {
             operatorInput();
-        else
+        } else
             numberInput();
 
         // Save operator
@@ -50,14 +33,12 @@ var Calculator = function () {
             _inputArray.push(input);
         }
 
-        // Save number
         function numberInput() {
-            if (_resultGiven == true) {
-                _inputArray = [];
-                _resultGiven = false; //always false
-            }
-            // _updateCurrentNumber(input);
-            _inputArray.push(input); //los agrega al array
+            if( _resultGiven ){
+                _inputArray = [input];
+                _resultGiven = false;
+            } else
+                _inputArray.push(input); //los agrega al array
         }
 
         callbackFunction(_inputArray, _resultGiven);
@@ -91,19 +72,12 @@ var Calculator = function () {
 
             } else {
                 // Current input is not a number ( = it is a . or operator
+
                 switch (_inputArray[i]) {
                     case '.':
                         stringNumber += '.'; // Agrega '.' al inputArray
                         break;
 
-                    case '-':
-                        stringNumber += '-';
-
-                        // if ((isNaN(parseInt(_inputArray[i - 1])))) {
-                        //     stringNumber += '-'; //currentNumber individually
-                        // }
-                        //****** works with +-1 but not with --1
-                        break;
                     // Default handle all of the operator
                     default:
                         // Save number into value array
@@ -112,10 +86,7 @@ var Calculator = function () {
                         numberAndOperatorArray.push(_inputArray[i]);
                         // Reset current string number
                         stringNumber = '';
-
-
                 }
-
             }
         }
 
@@ -210,6 +181,10 @@ var Calculator = function () {
 
         return _inputArray;
     };
+
+    function zero(){
+
+    }
 
     return this;
 };
