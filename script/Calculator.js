@@ -5,21 +5,22 @@ var Calculator = function () {
     _resetPressed = false;
     _resultGiven = false;
     _operatorPressed = false;
+    _zeroPressed  = false;
 
     /*
      Save number , . OR - in input array
      */
-    function _updateCurrentNumber(val_1) {
-        if ((val_1 == ".") && (_decimalAdded == false)) {
-            _decimalAdded = true;
-            console.log(_decimalAdded);
-
-        } else if ((val_1 == ".") && (_decimalAdded == true)) {
-            console.log("don't add decimal");
-            return;
-        }
-        _inputArray.push(val_1) //los agrega al array
-    } //
+    // function _updateCurrentNumber(val_1) {
+    //     if ((val_1 == ".") && (_decimalAdded == false)) {
+    //         _decimalAdded = true;
+    //         console.log(_decimalAdded);
+    //
+    //     } else if ((val_1 == ".") && (_decimalAdded == true)) {
+    //         console.log("don't add decimal");
+    //         return;
+    //     }
+    //     _inputArray.push(val_1) //los agrega al array
+    // } //
 
     /*
      Public functions
@@ -27,8 +28,19 @@ var Calculator = function () {
     this.saveInput = function (input, callbackFunction) { //this = Calculator
         console.log("Input pressed " + input);
 
-        if (input == '.') //|| (input == '-')) // ***
+        // if ((input == '.') && (_decimalAdded = false)) {
+        //     _decimalAdded = true;
+        //     numberInput();
+        // } else if ((_decimalAdded == true)) {
+        //     console.log("no decimal");
+        //     return;
+        // }
+
+        if ((input == '.') && (_decimalAdded = false))  { //|| (input == '-')) // ***
+            _decimalAdded = true;
+            console.log(_decimalAdded);
             numberInput();
+        }
         else if (isNaN(parseInt(input)))
             operatorInput();
         else
@@ -47,7 +59,8 @@ var Calculator = function () {
                 _inputArray = [];
                 _resultGiven = false; //always false
             }
-            _updateCurrentNumber(input);
+            // _updateCurrentNumber(input);
+            _inputArray.push(input); //los agrega al array
         }
 
         callbackFunction(_inputArray, _resultGiven);

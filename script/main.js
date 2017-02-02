@@ -20,8 +20,6 @@
         for (i = 0; i < myNumber.length; i++) {
             myNumber[i].addEventListener('click', function (event) {
 
-                console.log("you pressed " + this.id);
-
                 var inputValue = this.getAttribute("data-value");
                 calculatorInstance.saveInput(inputValue,
                     function onInputSaved(inputArray, resultGiven) {
