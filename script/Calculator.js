@@ -30,7 +30,17 @@ var Calculator = function () {
         function operatorInput() {
             _decimalAdded = false;
             _resultGiven = false;
-            _inputArray.push(input);
+            // Operator in previous input already
+            if( _inputArray.length != 0 && isNaN(_inputArray[_inputArray.length -1]) ){ //  &&
+                if ( input == '-' && isNaN(_inputArray[_inputArray.length -2]) ){
+                    console.log('Was operator before, not adding more minus')
+                } else if ( input == '-'  ) {
+                    _inputArray.push(input);
+                }
+
+                console.log('Not adding '+input+' because operator before already');
+            } else
+                _inputArray.push(input);
         }
 
         function numberInput() {
@@ -62,8 +72,6 @@ var Calculator = function () {
 
         // Loop through input: ['1', '.', '1', '+', '1']
         for (var i = 0; i < _inputArray.length; i++) {
-
-
             // Check if current input is a number
             if (!isNaN(parseInt(_inputArray[i]))) {  // ! es un double negative
                 // Concatenate number
@@ -72,12 +80,22 @@ var Calculator = function () {
 
             } else {
                 // Current input is not a number ( = it is a . or operator
-
                 switch (_inputArray[i]) {
                     case '.':
                         stringNumber += '.'; // Agrega '.' al inputArray
                         break;
+                    case '-':
+                        if( i==0 || isNaN(_inputArray[i-1]) )
+                            stringNumber = '-';
+                        else {
+                            if( stringNumber != '') {
+                                numberAndOperatorArray.push(parseFloat(stringNumber));
+                                stringNumber = '';
+                            }
+                            numberAndOperatorArray.push(_inputArray[i]);
 
+                        }
+                        break;
                     // Default handle all of the operator
                     default:
                         // Save number into value array

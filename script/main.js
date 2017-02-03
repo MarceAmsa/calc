@@ -56,11 +56,9 @@
 
         equalsButton.addEventListener('click', function () {
             displayShow.innerHTML = calculatorInstance.calculate();
-            inputArray = [];
         });
         // Bind clear button
         acButton.addEventListener('click', function () {
-
             calculatorInstance.empty();
             displayShow.innerHTML = '';
         });
@@ -81,12 +79,16 @@
                 //console.log(event.key, event.keyCode);
                 if ((event.keyCode >= 48 && event.keyCode <= 57) ) {
 
-                        val = event.keyCode - 48;
-                        console.log(val);
+                    val = event.keyCode - 48;
+                    console.log(val);
 
-                        mySecondCalculator.saveInput(val.toString(), function (inputArray, resGiven) {
+                    mySecondCalculator.saveInput(val.toString(), function (inputArray, resGiven) {
                         console.log(inputArray);
-                        displayShow.innerHTML += val;
+                        if (inputArray.length == 1) {
+                            displayShow.innerHTML = val.toString();
+                        } else {
+                            displayShow.innerHTML += val.toString();
+                        }
                     });
 
 
